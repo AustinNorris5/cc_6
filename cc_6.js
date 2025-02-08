@@ -40,3 +40,21 @@ let calculateBonus = (salary, performanceRating) => {
 //Log function to the console
 console.log(calculateBonus(5000, "Excellent"));
 console.log(calculateBonus(7000, "Good"))
+
+//Task 4: Parameters and Arguments
+
+//Write a function that calculates cost
+function calculateSubscriptionCost(plan, months, discount = 0) {
+    let planCost = {
+        "Basic": 10,
+        "Premium": 20,
+        "Enterprise": 50
+    };
+    let monthlyCost = planCost[plan] || 0;
+    let totalCost = (monthlyCost * months) - discount
+    return (`Total Cost: $${totalCost}`);
+};
+
+//Log fuction to the console
+console.log(calculateSubscriptionCost("Basic", 6, 10));
+console.log(calculateSubscriptionCost("Premium", 12, 0));
