@@ -6,7 +6,7 @@ function calculateProfit(costPrice, sellingPrice, unitsSold) {
     return (`Total Profit: $${profit}`);
 };
 
-//Log function to the console
+//Log function to the console and test data
 console.log(calculateProfit(20, 30, 100));
 console.log(calculateProfit(50, 70, 200));
 
@@ -18,7 +18,7 @@ let calculateSalesTax = function(amount, taxRate) {
     return (`Sales Tax: $${salesTax}`);
 };
 
-//Log function to the console
+//Log function to the console and test data
 console.log(calculateSalesTax(100, 0.07));
 console.log(calculateSalesTax(500, 0.1));
 
@@ -37,7 +37,7 @@ let calculateBonus = (salary, performanceRating) => {
         return (`Bonus: $${bonus}`);
 };
 
-//Log function to the console
+//Log function to the console and test data
 console.log(calculateBonus(5000, "Excellent"));
 console.log(calculateBonus(7000, "Good"))
 
@@ -55,7 +55,7 @@ function calculateSubscriptionCost(plan, months, discount = 0) {
     return (`Total Cost: $${totalCost}`);
 };
 
-//Log fuction to the console
+//Log fuction to the console and test data
 console.log(calculateSubscriptionCost("Basic", 6, 10));
 console.log(calculateSubscriptionCost("Premium", 12, 0));
 
@@ -67,6 +67,21 @@ function convertCurrency(amount, exchangeRate) {
     return `Converted Amount: $${convertedAmount}`;
 };
 
-//Log function to the console
+//Log function to the console and test data
 console.log(convertCurrency(100, 1.1));
 console.log(convertCurrency(250, 0.85));
+
+//Task 6: Higher-Order Functions
+
+//Declare an array with at least five order amounts
+let orders = [200, 600, 1200, 450, 800];
+
+//Write a higher-order function hat applies a 10% discount on orders above $500
+function applyBulkDiscount(orders, discountFunction) {
+    return orders.map(discountFunction);
+};
+
+//Log function to the console and test data
+let discountedOrders = applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount);
+console.log("Discounted Orders: ", discountedOrders);
+
